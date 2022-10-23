@@ -13,6 +13,9 @@ const Home = () => {
     useEffect(() => {
         setList([...List.reverse()]);
     }, [List])
+    useEffect(()=>{
+
+    },[pending,error])
 
     return (
         <div id='home'>
@@ -24,7 +27,8 @@ const Home = () => {
                 </div>
             </header>
             {error ?
-                <p className='error'>{error}</p> : (pending ?
+                <p className='error'>{error}</p> : 
+                (pending ?
                     <p className='center-text-in-viewport'>{pending}</p> :
                     (list.length === 0 ?
                         <p className='center-text-in-viewport'>Dictionary is Empty</p> :
