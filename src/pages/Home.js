@@ -9,12 +9,14 @@ const Home = () => {
     const { list: List, pending, error } = useListContext();
 
     const [list, setList] = useState(List);
+    const [Pending,setPending] = useState(pending);
 
     useEffect(() => {
         setList([...List.reverse()]);
     }, [List])
     useEffect(()=>{
-
+        setPending(pending);
+        setPending(error);
     },[pending,error])
 
     return (
