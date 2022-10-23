@@ -2,7 +2,8 @@ import React,{ createContext, useState, useEffect } from 'react'
 import io from "socket.io-client";
 import ToggleDarkTheme from '../helpers/ToggleDarkTheme';
 
-const url = 'http://localhost:8080';
+// const url = 'http://localhost:8080';
+const url = 'https://personal-dict.herokuapp.com';
 
 export const SocketContext = createContext();
 export const SocketContextProvider = ({ children }) => {
