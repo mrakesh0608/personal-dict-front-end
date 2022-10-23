@@ -16,7 +16,6 @@ const Home = () => {
     }, [List])
     useEffect(()=>{
         setPending(pending);
-        setPending(error);
     },[pending,error])
 
     return (
@@ -30,7 +29,7 @@ const Home = () => {
             </header>
             {error ?
                 <p className='error'>{error}</p> : 
-                (pending ?
+                (Pending ?
                     <p className='center-text-in-viewport'>{pending}</p> :
                     (list.length === 0 ?
                         <p className='center-text-in-viewport'>Dictionary is Empty</p> :
