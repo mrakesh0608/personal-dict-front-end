@@ -52,7 +52,7 @@ header button {
 
 .header-menu-list a:hover,
 .header-menu-list span:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgb(155, 155, 238);
 }
 
 .header-menu:active .header-menu-list,
@@ -70,4 +70,6 @@ header button {
     background-color: var(--bgLightColor);
     color: var(--textColor);
     padding: 5px;
+    border: 2px solid var(--textColor);
+    border-radius: 5px;
 }

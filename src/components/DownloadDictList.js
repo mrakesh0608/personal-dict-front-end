@@ -24,7 +24,7 @@ const DownloadDictList = () => {
         download(list, 'Dict-List.json', 'application/json');
     }
 
-    return <span onClick={handleDownload}>Download</span>;
+    return <span onClick={handleDownload}>Download List</span>;
 }
  
 export default DownloadDictList;
