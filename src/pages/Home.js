@@ -10,12 +10,14 @@ const Home = () => {
 
     const [list, setList] = useState(List);
     const [Pending,setPending] = useState(pending);
+    const [Error,setError] = useState(error);
 
     useEffect(() => {
         setList([...List.reverse()]);
     }, [List])
     useEffect(()=>{
         setPending(pending);
+        setError(error);
     },[pending,error])
 
     return (
@@ -27,7 +29,7 @@ const Home = () => {
                     <SortDateComp setList={setList} />
                 </div>
             </header>
-            {error ?
+            {Error ?
                 <p className='error'>{error}</p> : 
                 (Pending ?
                     <p className='center-text-in-viewport'>{pending}</p> :
