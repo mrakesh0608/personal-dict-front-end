@@ -1,3 +1,9 @@
+:root{
+    --bgColor: white;
+    --textColor: black;
+    --invertStrength: 0;
+    --bgLightColor: gainsboro;
+}
 body {
     margin: 0;
     padding: 0;

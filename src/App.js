@@ -4,13 +4,14 @@ import React from 'react';
 import Home from './pages/Home';
 import AddWord from './pages/AddWord';
 import FiveWords from './pages/FiveWords';
+import DownloadDictList from './components/DownloadDictList';
 
-import menuIcon from './icons/menu.png'
 import ToggleDarkTheme from './helpers/ToggleDarkTheme';
-
+import menuIcon from './icons/menu.png';
 import './css/App.css';
 
 const App = () => {
+
     return (
         <div className="App">
             <header className='main-header'>
@@ -24,6 +25,7 @@ const App = () => {
                         <Link to='/add'>Add Word</Link>
                         <Link to='/5words'>5 Words</Link>
                         <span onClick={ToggleDarkTheme}>Toggle Dark Theme</span>
+                        <DownloadDictList />
                     </div>
                 </div>
             </header>

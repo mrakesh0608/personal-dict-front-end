@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useListContext } from '../hooks/context/useListContext';
 
 import WordTable from '../components/WordTable';
-import { sortAlpha, SortAlphaComp, SortDateComp } from '../helpers/sortList';
+import { SortAlphaComp, SortDateComp } from '../helpers/sortList';
 
 const Home = () => {
 
@@ -11,7 +11,7 @@ const Home = () => {
     const [list, setList] = useState(List);
 
     useEffect(() => {
-        setList([...sortAlpha([...List])]);
+        setList([...List.reverse()]);
     }, [List])
 
     return (
