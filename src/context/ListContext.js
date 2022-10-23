@@ -23,6 +23,12 @@ export const ListReducer = (state, action) => {
                 error: action.payload
             }
         }
+        case 'SET_PENDING': {
+            return {
+                ...state,
+                pending: action.payload
+            }
+        }
         default: {
             return state;
         }
@@ -36,15 +42,19 @@ export const ListContextProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(ListReducer, {
         list: [],
+        pending:false,
         error: null
     });
 
     useEffect(() => {
+        dispatch({ type: 'SET_PENDING',payload: 'Loading . . .' });
         socket.emit('getList');
         socket.on('onList', res => {
             // console.log(res);
             if (res.data) dispatch({ type: 'SET_LIST', payload: [...res.data] });
-            else dispatch({ error: res.err });
+            else dispatch({ type: 'SET_ERROR',error: res.err });
+
+            dispatch({ type: 'SET_PENDING',payload: false });
         })
         socket.on('statusAddWord', (res) => {
             console.log(res);

@@ -19,7 +19,7 @@ header button {
 .center-text-in-viewport {
     display: grid;
     place-items: center;
-    height: 100vh;
+    height: 70vh;
     font-weight: 600;
     font-size: 20px;
 }

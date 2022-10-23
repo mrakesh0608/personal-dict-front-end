@@ -6,7 +6,7 @@ import { sortAlpha, SortAlphaComp, SortDateComp } from '../helpers/sortList';
 
 const Home = () => {
 
-    const { list: List, error } = useListContext();
+    const { list: List, pending, error } = useListContext();
 
     const [list, setList] = useState(List);
 
@@ -24,10 +24,12 @@ const Home = () => {
                 </div>
             </header>
             {error ?
-                <p className='error'>{error}</p> :
-                (list.length === 0 ?
-                    <p className='center-text-in-viewport'>Dictionary is Empty</p> :
-                    <WordTable list={list} />
+                <p className='error'>{error}</p> : (pending ?
+                    <p className='center-text-in-viewport'>{pending}</p> :
+                    (list.length === 0 ?
+                        <p className='center-text-in-viewport'>Dictionary is Empty</p> :
+                        <WordTable list={list} />
+                    )
                 )}
         </div>
     );
