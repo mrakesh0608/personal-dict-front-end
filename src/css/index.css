@@ -59,9 +59,11 @@ button[type="submit"]{
     color: white;
     background-color: #0095F6;
 }
-button:hover{
+button:active{
     background-color: rgb(182, 182, 190);
 }
-button:active{
-    background-color: gray;
+@media (min-width:600px){
+    button:hover{
+        background-color: gray;
+    }
 }

@@ -22,7 +22,7 @@ export const SocketContextProvider = ({ children }) => {
         socket.on('connect_error', err => {
             setIsSockError('failed to connect to server');
         });
-    }, []);
+    }, [socket]);
 
     return (
         <SocketContext.Provider value={{ socket, isSockError }} >

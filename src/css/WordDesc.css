@@ -1,17 +1,17 @@
 .word-desc{
     padding: 10px;
-    display: grid;
-    place-items: center;
-    width: 100%;
-    background-color: var(--bgLightColor);
 }
 .word-desc p{
     word-break: break-word;
 }
 .word-desc button{
+    color: red;
     padding: 10px;
     font-size: 16px;
     font-weight: bold;
-    color: red;
     border-radius: 5px;
+}
+.button-div{
+    display: grid;
+    place-items: center;
 }

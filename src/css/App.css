@@ -46,12 +46,11 @@ header button {
     cursor: pointer;
 }
 
-.header-menu-list a:hover,
-.header-menu-list span:hover {
+.header-menu-list a:active,
+.header-menu-list span:active {
     background-color: rgb(100, 170, 236);
 }
 
-.header-menu:active .header-menu-list,
 .header-menu:hover .header-menu-list {
     display: flex;
     flex-direction: column;
@@ -68,4 +67,12 @@ header button {
     padding: 5px;
     border: 2px solid var(--textColor);
     border-radius: 5px;
+}
+
+@media (min-width:600px) {
+
+    .header-menu-list a:hover,
+    .header-menu-list span:hover {
+        background-color: rgb(100, 170, 236);
+    }
 }
