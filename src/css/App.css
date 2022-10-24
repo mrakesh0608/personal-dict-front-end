@@ -34,6 +34,24 @@ header button {
 
 .header-menu-list {
     display: none;
+    
+    color: var(--textColor);
+    background-color: var(--bgLightColor);
+    border: 2px solid var(--textColor);
+    border-radius: 5px;
+    padding: 5px;
+    
+    animation: 0.5s fade;
+}
+@keyframes fade {
+    from{
+        opacity: 0.2;
+        right: 0;
+    }
+    to{
+        right: 20px;
+        opacity: 1;
+    }
 }
 
 .header-menu-list a,
@@ -61,18 +79,12 @@ header button {
     top: 35px;
     right: 20px;
     z-index: 2;
-
-    background-color: var(--bgLightColor);
-    color: var(--textColor);
-    padding: 5px;
-    border: 2px solid var(--textColor);
-    border-radius: 5px;
 }
 
 @media (min-width:600px) {
 
     .header-menu-list a:hover,
     .header-menu-list span:hover {
-        background-color: rgb(100, 170, 236);
+        background-color: var(--minBlue);
     }
 }
