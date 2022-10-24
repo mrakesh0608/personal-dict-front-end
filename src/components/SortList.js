@@ -23,17 +23,17 @@ const SortAlphaComp = ({ setList }) => {
     }
     return <button className='button-default'><img src={sortAlphaIcon} alt='sort' onClick={handleSort} /></button>
 }
-let s = false;
+let toggle = false;
 const SortDateComp = ({ setList }) => {
 
     const { list } = useListContext();
 
     const handleSort = () => {
         setList([...list.reverse()]);
-        s = !s;
+        toggle = !toggle;
     }
     return <button className='button-default'>
-        <img src={s ? sortDateRIcon : sortDateIcon} alt='sort' onClick={handleSort} />
+        <img src={toggle ? sortDateRIcon : sortDateIcon} alt='sort' onClick={handleSort} />
     </button>
 }
 export { sortAlpha, SortAlphaComp, SortDateComp };

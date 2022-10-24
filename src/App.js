@@ -4,6 +4,7 @@ import React from 'react';
 import Home from './pages/Home';
 import AddWord from './pages/AddWord';
 import FiveWords from './pages/FiveWords';
+import WordDesc from './pages/WordDesc';
 import DownloadDictList from './components/DownloadDictList';
 
 import ToggleDarkTheme from './helpers/ToggleDarkTheme';
@@ -33,6 +34,7 @@ const App = () => {
                 <Route exact path='/' element={<Home />} />
                 <Route exact path='/add' element={<AddWord />} />
                 <Route exact path='/5words' element={<FiveWords />} />
+                <Route exact path='/WordDesc/:id' element={<WordDesc />} />
             </Routes>
         </div>
     );

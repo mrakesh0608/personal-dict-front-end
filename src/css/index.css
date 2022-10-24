@@ -3,6 +3,7 @@
     --textColor: black;
     --invertStrength: 0;
     --bgLightColor: gainsboro;
+    --minBlue: #0095F6;
 }
 body {
     margin: 0;
@@ -13,8 +14,6 @@ body {
     background-color: var(--bgColor);
     color: var(--textColor);
 }
-
-
 
 .socket-error {
     display: grid;
@@ -37,4 +36,32 @@ img {
 
 .img-invert {
     filter: invert(var(--invertStrength));
+}
+
+.bg-trans {
+    background-color: transparent !important;
+}
+
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.button-default{
+    padding: 2px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 5px;
+}
+button[type="submit"]{
+    padding: 6px;
+    color: white;
+    background-color: #0095F6;
+}
+button:hover{
+    background-color: rgb(182, 182, 190);
+}
+button:active{
+    background-color: gray;
 }

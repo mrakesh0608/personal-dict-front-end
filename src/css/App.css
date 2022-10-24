@@ -24,10 +24,6 @@ header button {
     font-size: 20px;
 }
 
-.bg-trans {
-    background-color: transparent !important;
-}
-
 .main-header {
     background-color: yellowgreen;
 }
@@ -52,7 +48,7 @@ header button {
 
 .header-menu-list a:hover,
 .header-menu-list span:hover {
-    background-color: rgb(155, 155, 238);
+    background-color: rgb(100, 170, 236);
 }
 
 .header-menu:active .header-menu-list,

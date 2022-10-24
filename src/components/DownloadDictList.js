@@ -1,5 +1,5 @@
 import { useListContext } from '../hooks/context/useListContext';
-import { sortAlpha } from '../helpers/sortList';
+import { sortAlpha } from '../components/SortList';
 
 const DownloadDictList = () => {
     

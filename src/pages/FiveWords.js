@@ -3,7 +3,7 @@ import { useListContext } from '../hooks/context/useListContext';
 import '../css/table.css';
 import WordTable from '../components/WordTable';
 import refreshIcon from '../icons/refresh.png';
-import { sortAlpha } from '../helpers/sortList';
+import { sortAlpha } from '../components/SortList';
 
 import '../css/FiveWords.css';
 

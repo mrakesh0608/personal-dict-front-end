@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/table.css';
 
 const WordTable = ({ list}) => {
+    const navigate = useNavigate();
 
     return (
         <table>
@@ -13,7 +15,7 @@ const WordTable = ({ list}) => {
             </thead>
             <tbody>
                 {list.map((item, key) =>
-                    <tr key={key}>
+                    <tr key={key} id={item._id} onClick={()=>navigate(`/WordDesc/${item._id}`)}>
                         <td>{item.Word}</td>
                         <td>{item.Desc}</td>
                     </tr>

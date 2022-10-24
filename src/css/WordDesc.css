@@ -1,0 +1,17 @@
+.word-desc{
+    padding: 15px;
+    display: grid;
+    place-items: center;
+    width: 100;
+    background-color: ghostwhite;
+}
+.word-desc p{
+    word-break: break-word;
+}
+.word-desc button{
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: red;
+    border-radius: 5px;
+}

@@ -10,7 +10,11 @@ td {
     border: 1px solid var(--bgLightColor);
     text-align: left;
     padding: 8px;
-    word-break: break-word; 
+    word-break: break-word;
+}
+
+tbody tr:hover{
+    background-color: var(--minBlue);
 }
 
 tr:nth-child(even) {

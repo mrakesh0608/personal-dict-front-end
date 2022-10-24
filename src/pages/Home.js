@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useListContext } from '../hooks/context/useListContext';
 
 import WordTable from '../components/WordTable';
-import { SortAlphaComp, SortDateComp } from '../helpers/sortList';
+import { SortAlphaComp, SortDateComp } from '../components/SortList';
 
 const Home = () => {
 
