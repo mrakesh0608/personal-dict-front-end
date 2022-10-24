@@ -23,8 +23,8 @@ const App = () => {
                     </button>
                     <div className='header-menu-list'>
                         <Link to='/'>All Words</Link>
-                        <Link to='/add'>Add Word</Link>
                         <Link to='/5words'>5 Words</Link>
+                        <Link to='/add'>Add Word</Link>
                         <span onClick={ToggleDarkTheme}>Toggle Dark Theme</span>
                         <DownloadDictList />
                     </div>
