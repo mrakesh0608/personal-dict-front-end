@@ -5,13 +5,14 @@ import Home from './pages/Home';
 import AddWord from './pages/AddWord';
 import FiveWords from './pages/FiveWords';
 import WordDesc from './pages/WordDesc';
+import NotFound from './pages/NotFound';
 import DownloadDictList from './components/DownloadDictList';
 
 import ToggleDarkTheme from './helpers/ToggleDarkTheme';
 import menuIcon from './icons/menu.png';
 import './css/App.css';
 
-const App = () => {
+export default function App (){
 
     return (
         <div className="App">
@@ -35,8 +36,8 @@ const App = () => {
                 <Route exact path='/add' element={<AddWord />} />
                 <Route exact path='/5words' element={<FiveWords />} />
                 <Route exact path='/WordDesc/:id' element={<WordDesc />} />
+                <Route path='*' element={<NotFound />} />
             </Routes>
         </div>
     );
 }
-export default App;

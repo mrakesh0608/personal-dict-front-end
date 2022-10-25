@@ -6,7 +6,7 @@ const WordTable = ({ list}) => {
     const navigate = useNavigate();
 
     return (
-        <table>
+        <table id='WordTable'>
             <thead>
                 <tr>
                     <th>Word / Phrase</th>

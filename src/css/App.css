@@ -16,13 +16,6 @@ header button {
     margin-left: 5px;
 }
 
-.center-text-in-viewport {
-    display: grid;
-    place-items: center;
-    height: 70vh;
-    font-weight: 600;
-    font-size: 20px;
-}
 
 .main-header {
     background-color: yellowgreen;

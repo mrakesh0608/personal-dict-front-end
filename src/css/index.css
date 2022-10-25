@@ -1,10 +1,11 @@
-:root{
+:root {
     --bgColor: white;
     --textColor: black;
     --invertStrength: 0;
     --bgLightColor: gainsboro;
     --minBlue: #0095F6;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -42,28 +43,59 @@ img {
     background-color: transparent !important;
 }
 
-button{
+button {
     border: none;
     outline: none;
     cursor: pointer;
 }
-.button-default{
+
+.button-default {
     padding: 2px;
     border-radius: 5px;
     font-weight: 600;
     font-size: 15px;
     margin: 5px;
 }
-button[type="submit"]{
+
+button[type="submit"] {
     padding: 6px;
     color: white;
     background-color: #0095F6;
 }
-button:active{
+
+button:active {
     background-color: rgb(182, 182, 190);
 }
-@media (min-width:600px){
-    button:hover{
+
+@media (min-width:600px) {
+    button:hover {
         background-color: gray;
     }
 }
+
+.text-center {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.center-text-in-viewport {
+    display: grid;
+    place-items: center;
+    height: 70vh;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* select {
+    for Firefox
+    -moz-appearance: none;
+    for Chrome
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+}
+
+For IE10
+select::-ms-expand {
+    display: none;
+} */

@@ -1,30 +1,64 @@
 import { useListContext } from '../hooks/context/useListContext';
 import { sortAlpha } from '../components/SortList';
 
-const DownloadDictList = () => {
-    
-    const { list} = useListContext();
+import jsPDF from "jspdf";
+import autoTable from 'jspdf-autotable';
 
-    function download(data, fileName, contentType) {
-        data = sortAlpha([...data]);
+const DownloadDictList = () => {
+
+    const { list } = useListContext();
+    const data = sortAlpha([...list]);
+
+    function handleDownloadJSON() {
         const jsonData = {};
-        data.forEach(item=>{
-            jsonData[item.Word] = item.Desc;
-        })
-        console.log(data,jsonData);
-        
-        const file = new Blob([JSON.stringify(jsonData,null, 4)], { type: contentType });
+        data.forEach(item => jsonData[item.Word] = item.Desc)
+        // console.log(data, jsonData);
+
+        const file = new Blob([JSON.stringify(jsonData, null, 4)], { type: 'application/json' });
         const a = document.createElement("a");
         a.href = URL.createObjectURL(file);
-        a.download = fileName;
+        a.download = 'Dict-List.json'; //fileName;
         a.click();
     }
 
-    function handleDownload(){
-        download(list, 'Dict-List.json', 'application/json');
+    function handleDownloadPDF() {
+
+        const arrData = [];
+        data.forEach(item => arrData.push([item.Word, item.Desc]))
+
+        const doc = new jsPDF();
+
+        autoTable(doc, {
+            head: [['Word / Phrase', 'Description']],
+            body: arrData
+        })
+        doc.save('Dict-List.pdf');
     }
 
-    return <span onClick={handleDownload}>Download List</span>;
+    function handleDownloadEXCEL() {
+        const dataType = 'application/vnd.ms-excel';
+        const tableHTML = document.getElementById('WordTable').outerHTML.replace(/ /g, '%20');
+
+        // Create download link element & a link to the file
+        const downloadLink = document.createElement('a');
+        downloadLink.href = `data:${dataType},${tableHTML}`;
+        downloadLink.download = 'Dict-List.xls';
+        downloadLink.click();
+    }
+    return <>
+        <span onClick={handleDownloadJSON}>Download List As JSON</span>
+        <span onClick={handleDownloadPDF}>Download List As PDF</span>
+        <span onClick={handleDownloadEXCEL}>Download List As EXCEL</span>
+    </>
 }
- 
+
+// <span>Download List</span>
+// <select name="cars" id="cars">
+//     <optgroup label="Download As">
+//         <option value="Download List" selected disabled></option>
+//         <option value="volvo">PDF</option>
+//         <option value="saab">JSON</option>
+//         <option value="mercedes">Excel</option>
+//     </optgroup>
+// </select>
 export default DownloadDictList;
