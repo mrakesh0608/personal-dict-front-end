@@ -34,8 +34,8 @@ const AddWord = () => {
                 <h2>Add Word / Phrase</h2>
             </header>
             <form onSubmit={handleSubmit}>
-                <input type='text' name='Word' placeholder='Word / Phrase' />
-                <textarea name='Desc' placeholder='Description'></textarea>
+                <input type='text' name='Word' placeholder='Word / Phrase' required/>
+                <textarea name='Desc' placeholder='Description' required></textarea>
                 {isPending ?
                     <button className='button-default disabled' disabled>Adding ...</button> :
                     <button className='button-default' type='submit'>Submit</button>

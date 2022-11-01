@@ -51,8 +51,8 @@ export default function UpdateWord() {
                     <h2>Update Word / Phrase</h2>
                 </header>
                 <form onSubmit={handleSubmit}>
-                    <input id='update-word' type='text' name='Word' placeholder='Word / Phrase' />
-                    <textarea id='update-desc' name='Desc' placeholder='Description'></textarea>
+                    <input id='update-word' type='text' name='Word' placeholder='Word / Phrase' required/>
+                    <textarea id='update-desc' name='Desc' placeholder='Description' required></textarea>
                     {isPending ?
                         <button className='button-default disabled' disabled>Updating ...</button> :
                         <button className='button-default' type='submit'>Submit</button>
