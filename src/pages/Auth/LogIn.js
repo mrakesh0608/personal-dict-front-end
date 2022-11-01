@@ -25,7 +25,7 @@ const LogIn = () => {
             <div className='auth-div'>
                 <h1>Personal Dictionary</h1>
                 <form onSubmit={handleSubmit} className="auth-form">
-                    <div className='input-lable'>
+                    <div className='input-label'>
                         <input type="text" name="Username" required
                             value={Username} className='form-input'
                             placeholder=' '
@@ -35,7 +35,7 @@ const LogIn = () => {
                         />
                         <label className="form-label">Phone number, Username or email</label>
                     </div>
-                    <div className='input-lable'>
+                    <div className='input-label'>
                         <input type="password" name="password" required
                             value={Password} className='form-input'
                             placeholder=' '

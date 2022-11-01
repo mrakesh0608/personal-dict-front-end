@@ -3,7 +3,7 @@
     padding: 18px 10px;
 }
 
-form {
+.add-word form {
     background-color: var(--bgLightColor);
     padding: 10px;
     margin: 0 10px;
@@ -14,16 +14,15 @@ form {
     align-items: center;
 }
 
-form input,
-form textarea {
+.add-word form input,
+.add-word form textarea {
     width: 95% !important;
-    height: 20px;
+    height: 40px;
     padding: 8px;
     margin: 10px;
     font-size: 15px;
 }
 
-textarea {
-    font-family: sans-serif;
+.add-word textarea {
     min-height: 100px !important;
 }

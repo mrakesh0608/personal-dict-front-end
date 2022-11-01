@@ -27,8 +27,7 @@ const SignUp = () => {
             <div className="auth-div">
                 <h1>Personal Dictionary</h1>
                 <form onSubmit={handleSubmit} className="auth-form">
-                    <p id='signSee'>Sign up to see photos and videos from your friends.</p>
-                    <div className='input-lable'>
+                    <div className='input-label'>
                         <input
                             type="text" name="MobEmail" required
                             placeholder=' ' className='form-input'
@@ -36,9 +35,9 @@ const SignUp = () => {
                             onChange={e => { setMobEmail(e.target.value) }}
                             minLength={4} autoFocus
                         />
-                        <label className="form-label">Phone number, Username or email</label>
+                        <label className="form-label">Phone number or email</label>
                     </div>
-                    <div className='input-lable'>
+                    <div className='input-label'>
                         <input
                             type="text" name="fullname" required
                             placeholder=' ' className='form-input'
@@ -48,7 +47,7 @@ const SignUp = () => {
                         />
                         <label className="form-label">Full name</label>
                     </div>
-                    <div className='input-lable'>
+                    <div className='input-label'>
                         <input type="text" name="Username" required
                             placeholder=' ' className='form-input'
                             value={Username}
@@ -57,7 +56,7 @@ const SignUp = () => {
                         />
                         <label className="form-label">Username</label>
                     </div>
-                    <div className='input-lable'>
+                    <div className='input-label'>
                         <input type="password" name="password" required
                             placeholder=' ' className='form-input'
                             value={Password}

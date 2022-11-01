@@ -12,11 +12,6 @@ h2 {
     margin: 0;
 }
 
-header button {
-    margin-left: 5px;
-}
-
-
 .main-header {
     background-color: yellowgreen;
 }
@@ -40,20 +35,21 @@ header button {
     from{
         opacity: 0.2;
         right: 0;
+        top:20px;
     }
     to{
-        right: 20px;
         opacity: 1;
+        right: 20px;
+        top:35px;
     }
 }
 
 .header-menu-list a,
 .header-menu-list span {
     padding: 10px;
-    width: 80px;
 
     font-size: 16px;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
 }
 

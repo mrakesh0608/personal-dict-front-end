@@ -26,6 +26,6 @@ tr:nth-child(even) {
 
     tr th:first-child,
     tr td:first-child{
-        min-width: 22vw;
+        min-width: 25vw;
     }
 }
