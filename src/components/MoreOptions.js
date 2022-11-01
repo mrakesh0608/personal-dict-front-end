@@ -6,9 +6,9 @@ export default function MoreOptions({ Comp }) {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
-        document.querySelector('body').style.overflow = 'hidden';
+        if(show) document.querySelector('body').style.overflow = 'hidden';
         return () => { document.querySelector('body').style.overflow = 'auto'; }
-    }, [])
+    }, [show])
 
     const setMoreOptionsShow = () => setShow(true);
 

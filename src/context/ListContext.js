@@ -33,6 +33,14 @@ export const ListReducer = (state, action) => {
                 list: state.list.filter(item => item._id !== action.payload)
             };
         }
+        case 'UPDATE_WORD_IN_LIST': {
+            const k = state.list.findIndex(item => item._id === action.payload._id)
+            if( k >-1) state.list[k] = action.payload;
+            return {
+                ...state,
+                list: state.list
+            };
+        }
         case 'SET_ERROR': {
             return {
                 ...state,

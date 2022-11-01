@@ -11,7 +11,8 @@
     box-sizing: border-box;
     font-family: system-ui, sans-serif;
 }
-body{
+
+body {
     max-width: 100vw;
     min-height: 100vh;
 
@@ -19,14 +20,6 @@ body{
     color: var(--textColor);
 }
 
-.socket-error {
-    display: grid;
-    place-items: center;
-
-    color: red;
-    background-color: ghostwhite;
-    padding: 5px;
-}
 
 a {
     text-decoration: none;
@@ -75,18 +68,22 @@ button:active {
         background-color: rgb(182, 182, 190);
     }
 }
-.disabled{
+
+.disabled {
     cursor: progress;
     padding: 6px;
 }
-.btn-with-img{
+
+.btn-with-img {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.btn-with-img img{
+
+.btn-with-img img {
     margin-right: 10px;
 }
+
 .text-center {
     padding: 25px 0;
     text-align: center;
@@ -98,4 +95,8 @@ button:active {
     height: 70vh;
     font-weight: 600;
     font-size: 20px;
+}
+
+.error {
+    color: red;
 }

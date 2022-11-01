@@ -30,7 +30,7 @@ const Home = () => {
                 </div>
             </header>
             {Error ?
-                <p className='error'>{error}</p> : 
+                <p className='center-text-in-viewport error'>{error}</p> : 
                 (Pending ?
                     <p className='center-text-in-viewport'>{pending}</p> :
                     (list.length === 0 ?
