@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useAuthContext } from 'hooks/context/useAuthContext';
+import { useAuthContext } from '../context/useAuthContext';
 
-import {url} from 'helpers/Path'
+import {url} from '../../helpers/Path'
 
 export const useLogin = () => {
     const [error, setError] = useState(null)

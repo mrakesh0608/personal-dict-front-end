@@ -1,0 +1,17 @@
+.download{
+    position: relative;
+}
+.d-body{
+    position: absolute;
+    top: 0;
+    right: 100px;
+    background-color: var(--bgLightColor);
+    border: 2px solid var(--textColor);
+
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+.download:hover .d-body{
+    display: flex;
+}

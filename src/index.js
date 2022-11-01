@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
-import { SocketContextProvider } from './context/SocketContext';
+import { AuthContextProvider } from './context/AuthContext';
 import { ListContextProvider } from './context/ListContext';
 
 import App from './App';
@@ -11,10 +11,10 @@ import './css/index.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
-        <SocketContextProvider>
+        <AuthContextProvider>
             <ListContextProvider>
                 <App />
             </ListContextProvider>
-        </SocketContextProvider>
+        </AuthContextProvider>
     </BrowserRouter>
 );

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { useSignup } from "hooks/auth/useSignup";
-import { labelFocus } from 'helpers/DOMFun';
+import { useSignup } from "../../hooks/auth/useSignup";
+import { labelFocus } from '../../helpers/DOMFun';
 
-import 'css/Login_SignUp.css';
+import '../../css/Login_SignUp.css';
 
 const SignUp = () => {
 
@@ -25,7 +25,7 @@ const SignUp = () => {
     return (
         <div id="signup" className='auth'>
             <div className="auth-div">
-                <h1>Minsta</h1>
+                <h1>Personal Dictionary</h1>
                 <form onSubmit={handleSubmit} className="auth-form">
                     <p id='signSee'>Sign up to see photos and videos from your friends.</p>
                     <div className='input-lable'>

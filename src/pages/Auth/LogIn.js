@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { useLogin } from "hooks/auth/useLogin"
-import { labelFocus } from 'helpers/DOMFun';
+import { useLogin } from "../../hooks/auth/useLogin"
+import { labelFocus } from '../../helpers/DOMFun';
 
-import 'css/Login_SignUp.css';
+import '../../css/Login_SignUp.css';
 
 const LogIn = () => {
 
@@ -23,7 +23,7 @@ const LogIn = () => {
     return (
         <div id="login" className="auth">
             <div className='auth-div'>
-                <h1>Minsta</h1>
+                <h1>Personal Dictionary</h1>
                 <form onSubmit={handleSubmit} className="auth-form">
                     <div className='input-lable'>
                         <input type="text" name="Username" required

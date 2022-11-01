@@ -1,5 +1,5 @@
 import { createContext, useReducer, useEffect, useState } from 'react'
-import ToggleDarkTheme from 'helpers/ToggleDarkTheme';
+import ToggleDarkTheme from '../helpers/ToggleDarkTheme';
 
 export const AuthContext = createContext()
 

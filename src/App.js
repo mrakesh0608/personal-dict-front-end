@@ -1,43 +1,62 @@
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, Navigate } from 'react-router-dom';
 import React from 'react';
+
+import { useAuthContext } from './hooks/context/useAuthContext';
 
 import Home from './pages/Home';
 import AddWord from './pages/AddWord';
 import FiveWords from './pages/FiveWords';
 import WordDesc from './pages/WordDesc';
 import NotFound from './pages/NotFound';
-import DownloadDictList from './components/DownloadDictList';
 
+import LogIn from './pages/Auth/LogIn';
+import SignUp from './pages/Auth/SignUp';
+
+import DownloadDictList from './components/DownloadDictList';
+import { useLogout } from './hooks/auth/useLogout';
 import ToggleDarkTheme from './helpers/ToggleDarkTheme';
 import menuIcon from './icons/menu.png';
+
 import './css/App.css';
 
-export default function App (){
+export default function App() {
+
+    const { user, isLoading } = useAuthContext();
+    const { logout } = useLogout();
 
     return (
         <div className="App">
-            <header className='main-header'>
-                <h1><Link to='/'>Dictionary</Link></h1>
-                <div className='header-menu'>
-                    <button className='header-menu-btn button-default bg-trans'>
-                        <img src={menuIcon} className='img-invert' alt='menu' />
-                    </button>
-                    <div className='header-menu-list'>
-                        <Link to='/'>All Words</Link>
-                        <Link to='/5words'>5 Words</Link>
-                        <Link to='/add'>Add Word</Link>
-                        <span onClick={ToggleDarkTheme}>Toggle Dark Theme</span>
-                        <DownloadDictList />
+            {user &&
+                <header className='main-header'>
+                    <h1><Link to='/'>Dictionary</Link></h1>
+                    <div className='header-menu'>
+                        <button className='header-menu-btn button-default bg-trans'>
+                            <img src={menuIcon} className='img-invert' alt='menu' />
+                        </button>
+                        <div className='header-menu-list'>
+                            <Link to='/'>All Words</Link>
+                            <Link to='/5words'>5 Words</Link>
+                            <Link to='/addWord'>Add Word</Link>
+                            <span onClick={ToggleDarkTheme}>Toggle Dark Theme</span>
+                            <DownloadDictList />
+                            <span onClick={logout}>Logout</span>
+                        </div>
                     </div>
-                </div>
-            </header>
-            <Routes>
-                <Route exact path='/' element={<Home />} />
-                <Route exact path='/add' element={<AddWord />} />
-                <Route exact path='/5words' element={<FiveWords />} />
-                <Route exact path='/WordDesc/:id' element={<WordDesc />} />
-                <Route path='*' element={<NotFound />} />
-            </Routes>
+                </header>
+            }
+            {!isLoading &&
+                <Routes>
+                    <Route exact path='/' element={user ? <Home /> : <Navigate to='/login' />} />
+                    <Route exact path='/addWord' element={user ? <AddWord /> : <Navigate to='/login' />} />
+                    <Route exact path='/5words' element={user ? <FiveWords /> : <Navigate to='/login' />} />
+                    <Route exact path='/WordDesc/:id' element={user ? <WordDesc /> : <Navigate to='/login' />} />
+
+                    <Route exact path='/login' element={!user ? <LogIn /> : <Navigate to='/' />} />
+                    <Route exact path='/signup' element={!user ? <SignUp /> : <Navigate to='/' />} />
+
+                    <Route path='*' element={<NotFound />} />
+                </Routes>
+            }
         </div>
     );
 }

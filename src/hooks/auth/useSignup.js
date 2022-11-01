@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useAuthContext } from 'hooks/context/useAuthContext';
-import {url} from 'helpers/Path'
+import { useAuthContext } from '../context/useAuthContext';
+import {url} from '../../helpers/Path'
 
 export const useSignup = () => {
     

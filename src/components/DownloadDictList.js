@@ -3,6 +3,8 @@ import { sortAlpha } from '../components/SortList';
 
 import jsPDF from "jspdf";
 import autoTable from 'jspdf-autotable';
+import '../css/DownloadDictList.css';
+
 
 const DownloadDictList = () => {
 
@@ -45,20 +47,14 @@ const DownloadDictList = () => {
         downloadLink.download = 'Dict-List.xls';
         downloadLink.click();
     }
-    return <>
-        <span onClick={handleDownloadJSON}>Download List As JSON</span>
-        <span onClick={handleDownloadPDF}>Download List As PDF</span>
-        <span onClick={handleDownloadEXCEL}>Download List As EXCEL</span>
-    </>
+    return <span className='download'>
+        Download List As
+        <div className='d-body'>
+            <span onClick={handleDownloadEXCEL}>EXCEL</span>
+            <span onClick={handleDownloadJSON}>JSON</span>
+            <span onClick={handleDownloadPDF}>PDF</span>
+        </div>
+    </span>
 }
 
-// <span>Download List</span>
-// <select name="cars" id="cars">
-//     <optgroup label="Download As">
-//         <option value="Download List" selected disabled></option>
-//         <option value="volvo">PDF</option>
-//         <option value="saab">JSON</option>
-//         <option value="mercedes">Excel</option>
-//     </optgroup>
-// </select>
 export default DownloadDictList;
