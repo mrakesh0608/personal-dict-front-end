@@ -24,7 +24,7 @@ const AddWord = () => {
         console.log(data);
         if (data) {
             dispatch({ type: 'ADD_WORD_TO_LIST', payload: data.List[0] })
-            navigate('/');
+            navigate(`/WordDesc/${data.List[0]._id}`);
         }
     }, [data])
 

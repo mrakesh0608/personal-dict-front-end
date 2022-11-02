@@ -78,6 +78,7 @@ button:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 6px;
 }
 
 .btn-with-img img {

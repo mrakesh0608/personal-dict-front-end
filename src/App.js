@@ -24,7 +24,7 @@ export default function App() {
 
     const { user, isLoading } = useAuthContext();
     const { logout } = useLogout();
-    
+
     return (
         <div id="App" className="App">
             {user &&
@@ -35,6 +35,7 @@ export default function App() {
                             <img src={menuIcon} className='img-invert' alt='menu' />
                         </button>
                         <div className='header-menu-list'>
+                            <span>{user.Name}</span>
                             <Link to='/'>All Words</Link>
                             <Link to='/5words'>5 Words</Link>
                             <Link to='/addWord'>Add Word</Link>

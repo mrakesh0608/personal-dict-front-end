@@ -4,6 +4,10 @@ import { sortAlpha } from './SortList';
 import jsPDF from "jspdf";
 import autoTable from 'jspdf-autotable';
 
+import pdfIcon from '../icons/pdf.png';
+import jsonIcon from '../icons/json.png';
+import excelIcon from '../icons/excel.png';
+
 const DownloadOptList = () => {
 
     const { list } = useListContext();
@@ -47,9 +51,18 @@ const DownloadOptList = () => {
     }
 
     return <>
-        <span onClick={handleDownloadEXCEL}>EXCEL</span>
-        <span onClick={handleDownloadJSON}>JSON</span>
-        <span onClick={handleDownloadPDF}>PDF</span>
+        <div onClick={handleDownloadPDF}>
+            <img className='more-icons' src={pdfIcon} alt="pdf" />
+            <span>PDF</span>
+        </div>
+        <div onClick={handleDownloadJSON}>
+            <img className='more-icons img-invert' src={jsonIcon} alt="json" />
+            <span>JSON</span>
+        </div>
+        <div onClick={handleDownloadEXCEL}>
+            <img className='more-icons' src={excelIcon} alt="excel" />
+            <span>EXCEL</span>
+        </div>
     </>
 }
 export default DownloadOptList;

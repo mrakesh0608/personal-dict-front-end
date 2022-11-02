@@ -49,10 +49,9 @@
     }
 }
 
-#more-options-list a,
-#more-options-list span,
-#more-options-list div {
-    margin: 10px;
+.more-options-list a,
+.more-options-list div {
+    margin: 5px;
     list-style: none;
 
     display: grid;
@@ -60,9 +59,12 @@
     align-items: center;
     cursor: pointer;
 }
+.more-options-list span{
+    text-align: left !important;
+}
 
-#more-options-list a:active,
-#more-options-list div:active {
+.more-options-list a:active,
+.more-options-list div:active {
     opacity: 0.5;
 }
 

@@ -37,7 +37,7 @@ const WordDesc = () => {
             dispatch({ type: 'DELETE_WORD_FROM_LIST', payload: data })
             navigate('/');
         }
-    }, [data])
+    }, [data, id])
     return (
         <>
             {pending ?
@@ -46,17 +46,21 @@ const WordDesc = () => {
                     <p className='Word'>{item.Word}</p>
                     <p className='Desc'>{item.Desc}</p>
                     <div className='button-div'>
+                        {isError}
+                        {error}
                         {isPending ?
                             <button className='button-default disabled' disabled>Deleting ...</button> :
-                            <button className='btn-with-img' onClick={handleDelete}>
-                                <img src={deleteIcon} alt='delete' />
-                                <span>Delete</span>
-                            </button>
+                            <>
+                                <button className='btn-with-img' onClick={handleDelete}>
+                                    <img src={deleteIcon} alt='delete' />
+                                    <span>Delete</span>
+                                </button>
+                                <button className='btn-with-img bg-green' onClick={() => navigate(`/UpdateWord/${id}`)}>
+                                    <img src={updateIcon} alt='delete' />
+                                    <span>Update</span>
+                                </button>
+                            </>
                         }
-                        <button className='btn-with-img bg-green' onClick={()=> navigate(`/UpdateWord/${id}`)}>
-                            <img src={updateIcon} alt='delete' />
-                            <span>Update</span>
-                        </button>
                     </div>
                 </div>
             }
