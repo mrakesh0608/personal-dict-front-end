@@ -44,7 +44,7 @@ const WordDesc = () => {
                 <p className='center-text-in-viewport'>{pending}</p> :
                 <div className='word-desc'>
                     <p className='Word'>{item.Word}</p>
-                    <p className='Desc'>{item.Desc}</p>
+                    <p className='Desc'><pre>{item.Desc}</pre></p>
                     <div className='button-div'>
                         {isError}
                         {error}

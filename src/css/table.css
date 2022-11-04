@@ -23,12 +23,13 @@ tr:nth-child(even) {
     background-color: var(--bgLightColor);
 }
 @media(max-width:600px){
-    tbody tr:hover{
-        background-color: var(--minBlue);
-    }
-
     tr th:first-child,
     tr td:first-child{
-        min-width: 25vw;
+        min-width: 26vw;
+    }
+}
+@media(min-width:600px){
+    tbody tr:hover{
+        background-color: var(--minBlue);
     }
 }

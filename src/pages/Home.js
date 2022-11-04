@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useListContext } from '../hooks/context/useListContext';
 
 import WordTable from '../components/WordTable';
-import { SortAlphaComp, SortDateComp } from '../components/SortList';
+import { sortAlpha,SortAlphaComp, SortDateComp } from '../components/SortList';
 
 const Home = () => {
 
@@ -14,6 +14,7 @@ const Home = () => {
 
     useEffect(() => {
         setList([...List.reverse()]);
+        // setList([...sortAlpha([...List])]);
     }, [List])
     useEffect(()=>{
         setPending(pending);
@@ -23,7 +24,7 @@ const Home = () => {
     return (
         <div id='home'>
             <header>
-                <h2>All Words</h2>
+                <h2>All Words<sub>{list.length>0 && List.length}</sub></h2>
                 <div>
                     <SortAlphaComp setList={setList} />
                     <SortDateComp setList={setList} />
