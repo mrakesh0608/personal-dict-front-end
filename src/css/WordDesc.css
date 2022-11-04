@@ -1,21 +1,24 @@
-.word-desc{
+.word-desc {
     padding: 10px;
 }
-.word-desc p{
-    word-break: break-word;
+
+.word-desc p {
+    width: 100%;
     margin: 20px 0;
 }
-.word-desc p.Word{
+
+.word-desc p.Word {
     font-size: 20px;
     font-weight: bold;
 }
-.word-desc button{
-    color: red;
+
+.word-desc button {
     padding: 10px;
     font-weight: bold;
     border-radius: 5px;
 }
-.button-div{
+
+.button-div {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -24,6 +27,10 @@
     margin: 35px;
 }
 
-.bg-green{
+.bg-green {
     background-color: lightgreen;
+}
+
+.img-scale-dw {
+    transform: scale(0.8);
 }

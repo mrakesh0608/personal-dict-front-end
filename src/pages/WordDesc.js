@@ -53,10 +53,10 @@ const WordDesc = () => {
                             <>
                                 <button className='btn-with-img' onClick={handleDelete}>
                                     <img src={deleteIcon} alt='delete' />
-                                    <span>Delete</span>
+                                    <span className='warning'>Delete</span>
                                 </button>
                                 <button className='btn-with-img bg-green' onClick={() => navigate(`/UpdateWord/${id}`)}>
-                                    <img src={updateIcon} alt='delete' />
+                                    <img src={updateIcon} alt='delete' className='img-scale-dw'/>
                                     <span>Update</span>
                                 </button>
                             </>

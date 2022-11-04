@@ -3,6 +3,7 @@
     --textColor: black;
     --invertStrength: 0;
     --bgLightColor: gainsboro;
+    --bgNearDarkColor:gray;
     --minBlue: #0095F6;
 }
 
@@ -98,11 +99,16 @@ button:active {
     font-size: 20px;
 }
 
-.error {
+.error ,
+.warning{
     color: red;
 }
 
 sub{
     font-size: 10px;
     margin-left: 5px;
+    color: var(--bgNearDarkColor);
+}
+pre{
+    white-space: pre-wrap;
 }

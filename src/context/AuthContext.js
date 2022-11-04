@@ -25,17 +25,15 @@ export const AuthContextProvider = ({ children }) => {
     useEffect(() => {
         try {
             const user = JSON.parse(localStorage.getItem('user'))
-            if (user) {
-                dispatch({ type: 'LOGIN', payload: user })
-                if (localStorage.getItem('Dark-Theme')) ToggleDarkTheme();
-            }
+            if (user) dispatch({ type: 'LOGIN', payload: user })
+            if (localStorage.getItem('Dark-Theme')) ToggleDarkTheme();
             setIsLoading(false);
         } catch (err) {
             console.log(err);
             localStorage.removeItem('user');
             dispatch({ type: 'LOGOUT' });
         }
-    }, [])
+    }, []);
 
     console.log('AuthContext state:', state)
 
