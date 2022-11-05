@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 import deleteIcon from '../icons/delete.png';
 import updateIcon from '../icons/update.png';
-
+import speakIcon from '../icons/speak.png';
 import '../css/WordDesc.css';
 
 const WordDesc = () => {
@@ -38,33 +38,40 @@ const WordDesc = () => {
             navigate('/');
         }
     }, [data, id])
-    return (
-        <>
-            {pending ?
-                <p className='center-text-in-viewport'>{pending}</p> :
-                <div className='word-desc'>
-                    <p className='Word'>{item.Word}</p>
-                    <p className='Desc'><pre>{item.Desc}</pre></p>
-                    <div className='button-div'>
-                        {isError}
-                        {error}
-                        {isPending ?
-                            <button className='button-default disabled' disabled>Deleting ...</button> :
-                            <>
-                                <button className='btn-with-img' onClick={handleDelete}>
-                                    <img src={deleteIcon} alt='delete' />
-                                    <span className='warning'>Delete</span>
-                                </button>
-                                <button className='btn-with-img bg-green' onClick={() => navigate(`/UpdateWord/${id}`)}>
-                                    <img src={updateIcon} alt='delete' className='img-scale-dw'/>
-                                    <span>Update</span>
-                                </button>
-                            </>
-                        }
-                    </div>
-                </div>
-            }
-        </>
+
+    function P() {
+        const k = new SpeechSynthesisUtterance(item.Word);
+        // const voices = window.speechSynthesis.getVoices();
+        // k.voice = voices[78]; //Eng-Indian-Female
+        // console.log(voices);
+        window.speechSynthesis.speak(k);
+    }
+    return (pending ?
+        <p className='center-text-in-viewport'>{pending}</p> :
+        <div className='word-desc'>
+            <div className='word-speak'>
+                <span className='Word'>{item.Word}</span>
+                <img src={speakIcon} alt='p' className='img-invert' onClick={P} />
+            </div>
+            <pre className='Desc'>{item.Desc}</pre>
+            <div className='button-div'>
+                {isError}
+                {error}
+                {isPending ?
+                    <button className='button-default disabled' disabled>Deleting ...</button> :
+                    <>
+                        <button className='btn-with-img' onClick={handleDelete}>
+                            <img src={deleteIcon} alt='delete' />
+                            <span className='warning'>Delete</span>
+                        </button>
+                        <button className='btn-with-img bg-green' onClick={() => navigate(`/UpdateWord/${id}`)}>
+                            <img src={updateIcon} alt='update' className='img-scale-dw' />
+                            <span>Update</span>
+                        </button>
+                    </>
+                }
+            </div>
+        </div>
     );
 }
 

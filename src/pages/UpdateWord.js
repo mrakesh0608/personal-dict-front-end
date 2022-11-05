@@ -59,6 +59,7 @@ export default function UpdateWord() {
                     }
                     {isError && <span>{isError}</span>}
                 </form>
+                {error && <span>{error}</span>}
             </div>
         }
     </>

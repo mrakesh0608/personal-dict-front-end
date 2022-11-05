@@ -9,7 +9,7 @@ import '../css/FiveWords.css';
 
 const FiveWords = () => {
 
-    const { list, error } = useListContext();
+    const { list, error, pending } = useListContext();
 
     const [FW, setFW] = useState(list);
 
@@ -23,7 +23,8 @@ const FiveWords = () => {
         handleShuffle();
     }, [list]);
 
-    return (
+    return (pending ?
+        <p className='center-text-in-viewport'>{pending}</p> :
         <div id='five-words'>
             <header>
                 <h2>Five Words</h2>

@@ -1,17 +1,24 @@
 .word-desc {
     padding: 10px;
 }
-
-.word-desc p {
-    width: 100%;
-    margin: 20px 0;
+.word-desc .word-speak{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.word-desc p.Word {
+.word-desc span.Word {
     font-size: 20px;
     font-weight: bold;
-}
 
+    margin: 20px 0;
+    margin-right: 10px;
+}
+.word-speak img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
 .word-desc button {
     padding: 10px;
     font-weight: bold;
