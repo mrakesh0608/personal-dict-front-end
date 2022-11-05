@@ -95,8 +95,9 @@ button:active {
     display: grid;
     place-items: center;
     height: 70vh;
-    font-weight: 600;
+    font-weight: bold;
     font-size: 20px;
+    letter-spacing: 2px;
 }
 
 .error ,
